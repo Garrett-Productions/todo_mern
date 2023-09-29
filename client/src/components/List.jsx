@@ -34,6 +34,12 @@ const List = () => {
     });
     setToDoList(remainingToDos)
   }
+
+  const styleComplete = [];
+  if (toDo.complete){
+    styleComplete.push('line_through');
+    
+  }
   return (
     <div>
       <form onSubmit={(e) => {handleSubmit(e)}}>
