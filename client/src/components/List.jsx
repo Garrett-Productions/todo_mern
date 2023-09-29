@@ -27,7 +27,13 @@ const List = () => {
     });
     setToDoList(updatedTodos);
   }
-  
+
+  const handleDelete = (selectedTodo) => {
+    const remainingToDos = toDoList.filter((toDo, i) => {
+      return i !== selectedTodo;
+    });
+    setToDoList(remainingToDos)
+  }
   return (
     <div>
       <form onSubmit={(e) => {handleSubmit(e)}}>
