@@ -1,11 +1,22 @@
 import React, { useState } from 'react'
 
-const toDoList = () => {
+const List = () => {
 
   const [toDo, setToDo] = useState('');
   const [toDoList, setToDoList] = useState([]);
 
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (toDo.length === 0) {
+      return;
+    }
+    const trackedToDo = {
+      key: toDo,
+      complete: false
+    }
+    setToDoList([...toDoList, trackedToDo])
+    setToDo('')
+  }
   return (
     <div>
       <form onSubmit={(e) => {handleSubmit}}>
@@ -20,4 +31,4 @@ const toDoList = () => {
   )
 }
 
-export default toDoList
+export default List;
