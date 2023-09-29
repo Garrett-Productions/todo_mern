@@ -27,6 +27,12 @@ const List = () => {
         <button> Add Todo</button>
       </form>
       <hr/>
+      {
+        toDoList.map((toDo,i) => {
+          <div key={i}>
+            <input type='checkbox' checked={toDo.complete} onChange={(event) => {handleComplete(i)}}
+        })
+      }
     </div>
   )
 }
