@@ -35,11 +35,6 @@ const List = () => {
     setToDoList(remainingToDos)
   }
 
-  const styleComplete = [];
-  if (toDo.complete){
-    styleComplete.push('line_through');
-    
-  }
   return (
     <div>
       <form onSubmit={(e) => {handleSubmit(e)}}>
@@ -52,10 +47,14 @@ const List = () => {
       <hr/>
       {
         toDoList.map((toDo,i) => {
+          const styleComplete = [];
+          if (toDo.complete){
+            styleComplete.push('line_through');
+          }
           return(
           <div key={i}>
             <input type='checkbox' checked={toDo.complete} onChange={(event) => {handleComplete(i)}}></input>
-            <span>{toDo.toDo}</span>
+            <span className={styleComplete.join(" ")}>{toDo.toDo}</span>
             <button onClick={(e) => handleDelete(i)}>Delete Todo</button>
           </div>
           )
