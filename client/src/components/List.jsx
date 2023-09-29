@@ -17,6 +17,17 @@ const List = () => {
     setToDoList([...toDoList, trackedToDo])
     setToDo('')
   }
+
+  const handleComplete = (thisTodo) => {
+    const updatedTodos = toDoList.map((toDo, i) => {
+      if ( thisTodo === i) {
+        toDo.complete =! toDo.complete;
+      }
+      return toDo
+    });
+    setToDoList(updatedTodos);
+  }
+  
   return (
     <div>
       <form onSubmit={(e) => {handleSubmit(e)}}>
