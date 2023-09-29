@@ -11,7 +11,7 @@ const List = () => {
       return;
     }
     const trackedToDo = {
-      key: toDo,
+      toDo: toDo,
       complete: false
     }
     setToDoList([...toDoList, trackedToDo])
@@ -29,10 +29,12 @@ const List = () => {
       <hr/>
       {
         toDoList.map((toDo,i) => {
+          return(
           <div key={i}>
-            <input type='checkbox' checked={toDo.complete} onChange={(event) => {handleComplete(i)}}/>
+            <input type='checkbox' checked={toDo.complete} onChange={(event) => {handleComplete(i)}}></input>
+            <span>{trackedToDo.toDo}}</span>
             <button onClick={(e) => handleDelete(i)}>Delete Todo</button>
-          </div>
+          </div>)
         })
       }
     </div>
