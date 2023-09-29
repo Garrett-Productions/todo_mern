@@ -32,9 +32,10 @@ const List = () => {
           return(
           <div key={i}>
             <input type='checkbox' checked={toDo.complete} onChange={(event) => {handleComplete(i)}}></input>
-            <span>{trackedToDo.toDo}}</span>
+            <span>{toDo.toDo}</span>
             <button onClick={(e) => handleDelete(i)}>Delete Todo</button>
-          </div>)
+          </div>
+          )
         })
       }
     </div>
