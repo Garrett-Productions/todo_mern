@@ -4,7 +4,6 @@ import toDoList from './components/toDoList'
 
 function App() {
 
-
   return (
     <>
       <toDoList />
