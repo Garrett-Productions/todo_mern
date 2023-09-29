@@ -30,7 +30,9 @@ const List = () => {
       {
         toDoList.map((toDo,i) => {
           <div key={i}>
-            <input type='checkbox' checked={toDo.complete} onChange={(event) => {handleComplete(i)}}
+            <input type='checkbox' checked={toDo.complete} onChange={(event) => {handleComplete(i)}}/>
+            <button onClick={(e) => handleDelete(i)}>Delete Todo</button>
+          </div>
         })
       }
     </div>
