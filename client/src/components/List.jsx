@@ -19,7 +19,7 @@ const List = () => {
   }
   return (
     <div>
-      <form onSubmit={(e) => {handleSubmit}}>
+      <form onSubmit={(e) => {handleSubmit(e)}}>
         <label>
           Insert Todo:
         </label>
